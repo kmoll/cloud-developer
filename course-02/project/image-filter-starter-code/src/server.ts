@@ -37,8 +37,8 @@ import path from 'path'
 
   // Get a greeting to a specific person to demonstrate req.query
   app.get( "/filteredimage/", async ( req: Request, res: Response) => {
-    let { image_url: string } = req.query;
-
+    let image_url:string  = req.query.image_url;
+    console.log(image_url);
     if ( !image_url ) {
       return res.status(400)
                 .send(`Image URL is required`);
